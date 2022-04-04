@@ -26,7 +26,7 @@ nltk.download('omw-1.4')
 nlp = spacy.load('en_core_web_sm')
 
 # Test case for read_text() function in redactor.py
-def test_output():
+def test_readinput():
     if os.path.exists('project1/*.txt'):
         assert True
 
