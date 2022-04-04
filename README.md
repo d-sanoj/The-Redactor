@@ -12,6 +12,9 @@ _Tester_ - _https://www.regextester.com_
 **Installation directions -** In this project, we use the packages spacy, collections, re, nltk, glob, sys, os and nltk. These packages can be installed using the command below replacing [package_name] with the package that is to be installed. These packages will be imported according to requirement.  
 **pipenv install [package_name]**  
 
+Aditionally, we also need to run the command below to install required spacy model -  
+```! pipenv run python -m spacy download en_core_web_sm'''
+
 #### Project Description -
 **redactor.py file -** This file is provided in the project1 directory which constains the functions and execution code for the program for desired output. Each function is further explained below.
 
