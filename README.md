@@ -7,6 +7,7 @@
 _Examples -_ _https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number_  
 _Tester_ - _https://www.regextester.com_  
 **_File functions -_** _https://realpython.com/working-with-files-in-python/_  
+**_Concepts function for synonyms -_** _https://www.geeksforgeeks.org/get-synonymsantonyms-nltk-wordnet-python/_  
 
 **Installation directions -** In this project, we use the packages spacy, collections, re, nltk, glob, sys, os and nltk. These packages can be installed using the command below replacing [package_name] with the package that is to be installed. These packages will be imported according to requirement.  
 **pipenv install [package_name]**  
