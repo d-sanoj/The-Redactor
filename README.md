@@ -24,9 +24,9 @@ _Tester_ - _https://www.regextester.com_
     ``` r'\d{4} | [\d]{1,2}/[\d]{1,2}/[\d]{2,4} | Sun,| Mon,| Tue,| Wed,| Thu,| Fri,| Sat,| Jan | Feb | Mar | Apr| May | Jun | Jul | Aug | Sep | Oct | Nov | Dec ' ```  
 is used and the input file matching to the above expression is also masked with █.
 
-**redact_genders() function -**  This function takes input from the previous called function and replaces the string with █ when matched with the format of regex expression -     ``` r'\A He | he |[Ss]he | [Hh]im| [Hh]is | [Hh]er | [Mm]en| [Ww]omen'. ```
+**redact_genders() function -**  This function takes input from the previous called function and replaces the string with █ when matched with the format of regex expression -  ``` r'\A He | he |[Ss]he | [Hh]im| [Hh]is | [Hh]er | [Mm]en| [Ww]omen'. ```
 
-**redact_phonenumber() function -** This function will take the input from the previous called function and then replaces the string when matched with the regex format below -     ``` r' \d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4} ' ```
+**redact_phonenumber() function -** This function will take the input from the previous called function and then replaces the string when matched with the regex format below -  ``` r' \d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4} ' ```
 
 **redact_concepts() function -** This function will take the input from the last called function and then using nltk package and lemmas, the synonym of the word mentioned during the execution of the program in command line and mask the synonyms with the character █.
 
