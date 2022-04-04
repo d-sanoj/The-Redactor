@@ -24,7 +24,7 @@ _Tester_ - _https://www.regextester.com_
     ``` r'\d{4} | [\d]{1,2}/[\d]{1,2}/[\d]{2,4} | Sun,| Mon,| Tue,| Wed,| Thu,| Fri,| Sat,| Jan | Feb | Mar | Apr| May | Jun | Jul | Aug | Sep | Oct | Nov | Dec ' ```  
 is used and the input file matching to the above expression is also masked with █.
 
-**redact_genders() function -** This function takes input from the previous called function and replaces the string with █ when matched with the format of regex expression -     ``` r'\A He | he |[Ss]he | [Hh]im| [Hh]is | [Hh]er | [Mm]en| [Ww]omen'. ```
+**redact_genders() function -**  This function takes input from the previous called function and replaces the string with █ when matched with the format of regex expression -     ``` r'\A He | he |[Ss]he | [Hh]im| [Hh]is | [Hh]er | [Mm]en| [Ww]omen'. ```
 
 **redact_phonenumber() function -** This function will take the input from the previous called function and then replaces the string when matched with the regex format below -     ``` r' \d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4} ' ```
 
@@ -34,7 +34,7 @@ Aditionally, code for to write complete masked data is written in main function.
 
 Further, code for stats is also written in main function, this will count the each occurance of the masked data in the input data according to each requirement names, dates, address, phone number, genders and concepts. During the execution, if we provide **stdout** for --stats, it will print the count of the masked data according to each file and their attributes as the terminal output. Alternatively, if we provide **stderr** for --stats, the count of maksed data of each file according to the file and attributes will be appended into the stats.txt file in folder stats in the directory project1.
 
-To run the function, we need to use the command below - 
+To run the function, we need to use the command below -  
 ```    pipenv run python redactor.py --input '*.txt'      --input 'project1/.txt'                               --names                                                                                                                     --address                                                                                                                   --dates                                                                                                                     --genders                                                                                                                   --phones                                                                                                                   --concept 'film'                                                                                                           --output 'files/'                                                                                                           --stats stdout```  
 In the command above, the word **film** can be replaced to find and mask synonym of any other word. and the word **stdout** which prints the data in console can be replaced with the word **stderr** to append the output to stats.txt file.
 
