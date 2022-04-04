@@ -44,6 +44,8 @@ Here, we have created a new directory called **tests** and then created a file c
 Firstly, we import the packages sys to execute test file for all the directories of the project and provide the path accordingly and then import project1 folder and redactor.py within the folder and then finally we should import package pytest to run testcases accordingly. Pyest modules works on pytest framework and can be installed using the command below -  
 ```pipenv install pytest command.```
 
+**test_readinput() function -** In this function, we test if there are existing files in project1 folder to be read as input. the test case will be passed if there are existing files for processing.
+
 **test_names() function -** In this function, we declare a string and then call the function redact_names() from redactor.py and assert if the string is masked correctly. If the string declared in masked correctly, test case will be passed.
 
 **test_address() function -** In this function, we declare a string of address and then call the function redact_address() from redactor.py and assert if the string is masked correctly. If the string declared in masked correctly, test case will be passed.
