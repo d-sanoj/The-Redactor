@@ -64,7 +64,7 @@ def test_gender():
 def test_concept():
     data = 'film'
     concept_test = redactor.redact_concepts(data,'none','film')
-    assert len(concept_test) == len('███████')
+    assert len(concept_test) == len('████')
 
 # Test case for readct_phonenumber() function in redactor.py
 def test_phone():
