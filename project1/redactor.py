@@ -193,7 +193,7 @@ for i in files:
 
                 total = 0
                 total = countname + countaddress + countdate + countgender + countphone + countconcept
-                print(data)
+                
                 # Source for file functions - https://realpython.com/working-with-files-in-python/
                 # Writing stats to stats.txt in stats folder when stderr is provided
                 if arg_ls[j+1] == 'stderr':
