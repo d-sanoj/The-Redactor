@@ -32,7 +32,7 @@ nlp = spacy.load('en_core_web_sm')
 def read_text(inputfiles):
     txt = []
     with open(inputfiles, 'r') as myfile:
-        txt = myfile.read().replace('\n', '')
+        txt = myfile.read()
     return(txt)
 
 # Redacting methods using spacy, re and wordnet
@@ -95,10 +95,13 @@ def redact_phonenumber(txt, inputfiles):
 
 # redacting synonyms using nltk wordnet and lemma
 def redact_concepts(txt, inputfiles, concept):
-    clean_text6 = txt.lower()
+    clean_text6 = txt
     for syn in wordnet.synsets(concept):
         for l in syn.lemmas():
-            clean_text6=clean_text6.replace(l.name(),u"\u2588"*len(wordnet.synsets(concept)))
+            sentence = clean_text6.splitlines()
+            for line in sentence:
+                if concept in line:
+                    clean_text6=clean_text6.replace(line,u"\u2588"*len(line))
     return clean_text6
 
 
@@ -118,7 +121,7 @@ for i in files:
             if arg_ls[j] == '--names':
                 data = redact_names(data, i)
 
-            if arg_ls[j] == '--addresses':
+            if arg_ls[j] == '--address':
                 data = redact_address(data, i)
 
             if arg_ls[j] == '--dates':
@@ -157,11 +160,11 @@ for i in files:
 
                 countaddress = 0
                 for ent in reversed(doc.ents):
-                    if ent.label_ == 'GPE':
+                    if ent.label_ =='GPE':
                         countaddress = countaddress+1
-                    if ent.label_ == 'LOC':
+                    if ent.label_ =='LOC':
                         countaddress = countaddress+1
-                    if ent.label_ == 'FAC':
+                    if ent.label_ =='FAC':
                         countaddress = countaddress+1
                 
                 countdate = 0
@@ -190,7 +193,7 @@ for i in files:
 
                 total = 0
                 total = countname + countaddress + countdate + countgender + countphone + countconcept
-
+                print(data)
                 # Source for file functions - https://realpython.com/working-with-files-in-python/
                 # Writing stats to stats.txt in stats folder when stderr is provided
                 if arg_ls[j+1] == 'stderr':
