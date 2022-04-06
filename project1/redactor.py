@@ -139,15 +139,11 @@ for i in files:
 
             # Writing output to a file in files director
             if arg_ls[j] == '--output':
-                if(arg_ls[j+1]) == 'files/':
-                    file = open(arg_ls[j+1]+i.split('.')[0]+'.redacted','w')
-                    file.write(data)
-                    file.close()
-                else:
+                if not os.path.exists(arg_ls[j+1]):
                     os.mkdir(arg_ls[j+1])
-                    file = open(arg_ls[j+1]+i.split('.')[0]+'.redacted','w')
-                    file.write(data)
-                    file.close()
+                file = open(arg_ls[j+1]+i.split('.')[0]+'.txt.redacted','w')
+                file.write(data)
+                file.close()
 
             if arg_ls[j] == '--stats':
                 # Counting stats for each function
@@ -197,18 +193,13 @@ for i in files:
                 # Source for file functions - https://realpython.com/working-with-files-in-python/
                 # Writing stats to stats.txt in stats folder when stderr is provided
                 if arg_ls[j+1] == 'stderr':
-                    path = os.path.join('stats', 'stats.txt')
-                    if not os.path.exists('stats'):
-                        os.mkdir('stats')
-                    with open('stats'+'/'+'stats'+'.txt','a') as statsfile:
-                        sys.stdout = statsfile
-                        print("\nRedacted Stats for input file:", i.format())
-                        print("Names redacted:",countname)
-                        print("Address redacted:",countaddress)
-                        print("Dates redacted",countdate)
-                        print("Genders redacted:",countgender)
-                        print("Phonenumber redacted",countphone)
-                        print("Concept Redacted",countconcept)
+                    print("Redacted Stats for input file:", i.format())
+                    print("Names redacted:",countname)
+                    print("Address redacted:",countaddress)
+                    print("Dates redacted",countdate)
+                    print("Genders redacted:",countgender)
+                    print("Phonenumber redacted",countphone)
+                    print("Concept Redacted",countconcept)
                 
                 # Printing the output of stats to console when stdout is provided
                 if arg_ls[j+1] == 'stdout':
@@ -219,3 +210,17 @@ for i in files:
                     print("Genders redacted:",countgender)
                     print("Phonenumber redacted",countphone)
                     print("Concept Redacted",countconcept)
+
+                else:
+                    path = os.path.join('stats', arg_ls[j+1])
+                    if not os.path.exists('stats'):
+                        os.mkdir('stats')
+                    with open('stats'+'/'+arg_ls[j+1]+'.txt','a') as statsfile:
+                        sys.stdout = statsfile
+                        print("Redacted Stats for input file:", i.format())
+                        print("Names redacted:",countname)
+                        print("Address redacted:",countaddress)
+                        print("Dates redacted",countdate)
+                        print("Genders redacted:",countgender)
+                        print("Phonenumber redacted",countphone)
+                        print("Concept Redacted",countconcept)
