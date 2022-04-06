@@ -18,7 +18,7 @@ Aditionally, we also need to run the command below to install required spacy mod
 #### Project Description -
 **redactor.py file -** This file is provided in the project1 directory which constains the functions and execution code for the program for desired output. Each function is further explained below.
 
-**read_text() function -** This function will read the textfile that is spcified in a folder and convert it into the desired format for further redaction process.
+**read_text() function -** This function will read any type of the file such as text file, .md file or any other file with function readable format that is spcified in a folder and convert it into the desired format for further redaction process.
 
 **redact_names() function -** This function takes the input from read_text() function and then using spacy package, name entities are recognized for the input and is marked with █ character.
 
@@ -36,14 +36,14 @@ is used and the input file matching to the above expression is also masked with 
 Here, while redacting the specific line containing the word or synonym of the word mentioned it will consider last \n before the word or synonym and first \n after the word and redact the line accordingly. If there are no new lines i.e., \n in the string read, it will redact the whole file as it will consider the whole file as one line without new lines. You need not specify the \n character in input text as the enter key press in input file is considered as new line while reading the text file and python replaces it with \n automatically for execution.  
 In this function, splitlines() is used to convert the data to be printed in output file.
 
-Aditionally, code for to write complete masked data is written in main function. This data will take the masked data of each text file in a project1 folder, run the functions and then writes the redacted data into the [name].redacted file in files folder of project1 directory.
+Aditionally, code for to write complete masked data is written in main function. This data will take the masked data of each  file according to the mentioned file format in a project1 folder, run the functions and then writes the redacted data into the [name].txt.redacted file in specified folder in command of project1 directory.
 
-Further, code for stats is also written in main function, this will count the each occurance of the masked data in the input data according to each requirement names, dates, address, phone number, genders and concepts. During the execution, if we provide **stdout** for --stats, it will print the count of the masked data according to each file and their attributes as the terminal output. Alternatively, if we provide **stderr** for --stats, the count of maksed data of each file according to the file and attributes will be appended into the stats.txt file in folder stats in the directory project1.
+Further, code for stats is also written in main function, this will count the each occurance of the masked data in the input data according to each requirement names, dates, address, phone number, genders and concepts. During the execution, if we provide **stdout** or **stderr** for --stats, it will print the count of the masked data according to each file and their attributes as the terminal output. Alternatively, if we provide any other string after --stats, the count of maksed data of each file according to the file and attributes will be appended into the [name].txt file in folder stats in the directory project1 where name will be the name provided while running the command except stdout and stderr.
 
 To run the function, we need to run the command below in project1 directory -  
 ```pipenv run python redactor.py --input '*.txt' --input 'project1/.txt' --names --address --dates --genders --phones --concept 'film' --output 'files/' --stats stdout```
 
-In the command above, the word **film** can be replaced to find and mask synonym of any other word. and the word **stdout** which prints the data in console can be replaced with the word **stderr** to append the output to stats.txt file.
+In the command above, the word **film** can be replaced to find and mask synonym of any other word. and the word **stdout** which prints the data in console can be replaced with the word **stderr** to do the same action to print the data in the terminal or replace with any other word such as abc or xyz which will create the text file mentioned such as abc.txt and xyz.txt and will append the count of the stats in that file.
 
 #### Test Cases - 
 Here, we have created a new directory called **tests** and then created a file called **test_code.py** which contains different functions of test cases for each function in redactor.py. Each test case in the file is explained below accordingly.
