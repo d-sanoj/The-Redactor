@@ -16,6 +16,8 @@ import glob
 import sys
 import os
 import nltk
+import en_core_web_md
+
 
 # Downloading and loading necessary models for nltk and spacy running the program
 
@@ -26,7 +28,8 @@ nltk.download('maxent_ne_chunker')
 nltk.download('words')
 nltk.download('omw-1.4')
 
-nlp = spacy.load('en_core_web_sm')
+nlp = en_core_web_md.load()
+#nlp = spacy.load('en_core_web_sm')
 
 # Code for reading text file that is to be processed
 def read_text(inputfiles):
