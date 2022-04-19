@@ -141,7 +141,8 @@ for i in files:
             if arg_ls[j] == '--output':
                 if not os.path.exists(arg_ls[j+1]):
                     os.mkdir(arg_ls[j+1])
-                file = open(arg_ls[j+1]+i.split('.')[0]+'.txt.redacted','w')
+                z = i.split('/')[-1]
+                file = open(arg_ls[j+1]+z+'.redacted','w')
                 file.write(data)
                 file.close()
 
@@ -213,9 +214,7 @@ for i in files:
 
                 else:
                     path = os.path.join('stats', arg_ls[j+1])
-                    if not os.path.exists('stats'):
-                        os.mkdir('stats')
-                    with open('stats'+'/'+arg_ls[j+1]+'.txt','a') as statsfile:
+                    with open(arg_ls[j+1],'a') as statsfile:
                         sys.stdout = statsfile
                         print("Redacted Stats for input file:", i.format())
                         print("Names redacted:",countname)
