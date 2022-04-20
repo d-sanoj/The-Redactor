@@ -7,11 +7,11 @@
 
 import sys
 sys.path.append('..')
-import project1
-from project1 import redactor
+import redactor
 import pytest
 import nltk
 import spacy
+import en_core_web_md
 import os.path
 
 # Downloading necessary models for the pytest to run
@@ -23,7 +23,7 @@ nltk.download('maxent_ne_chunker')
 nltk.download('words')
 nltk.download('omw-1.4')
 
-nlp = spacy.load('en_core_web_sm')
+nlp = en_core_web_md.load()
 
 # Test case for read_text() function in redactor.py
 def test_readinput():
