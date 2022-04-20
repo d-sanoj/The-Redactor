@@ -17,12 +17,12 @@ In the above command, we can replace 'film' with any other name to find synonyms
 ```pipenv run python -m pytest```
 
 **Successful execution of code** ---  
-<img width="1435" alt="image"src="https://user-images.githubusercontent.com/31980486/164136335-4bcd6860-4139-44c5-884f-df035ab67812.png">  
+<img width="1435" alt="image" src="https://user-images.githubusercontent.com/31980486/164136335-4bcd6860-4139-44c5-884f-df035ab67812.png">  
 
 **Successful execution of test cases** ---
-<img width="1435" alt="image"src="https://user-images.githubusercontent.com/31980486/164139358-cafd86b8-0718-4e81-a7fb-783ad23f9359.png">  
+<img width="1435" alt="image" src="https://user-images.githubusercontent.com/31980486/164139358-cafd86b8-0718-4e81-a7fb-783ad23f9359.png">  
 
 **Tree Structure of the code** ---  
-<img width="1435" alt="image"src="https://user-images.githubusercontent.com/31980486/164140518-ce5d28fb-9d88-479b-8b83-dc0652a877db.png">  
+<img width="1435" alt="image" src="https://user-images.githubusercontent.com/31980486/164140518-ce5d28fb-9d88-479b-8b83-dc0652a877db.png">  
 
 Changes have been made accordingly and the code has been pushed to the github and tag v2.0 is done.
