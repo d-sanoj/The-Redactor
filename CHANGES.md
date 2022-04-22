@@ -4,12 +4,12 @@
 * **Output files not stored in respective folder** --- Made changes to the tree structure. Moved the redactor.py file and  the input files such as input.txt and input2.txt to the root directory of the project where the README.md exists for the execution. Now executing the code will redirect the output redacted files to the folder specified in the command while execution.
 * **File names not re-assigned correctly** --- Made changes to the output file names from the format of [filename].txt.redacted to [filename].redacted where [filename] will take the complete name of input file including the format such input input.txt or input2.txt and will associate the .redacted format to it such as input.txt.redacted and input2.txt.redacted.
 * **Missing Stats** --- Made changes to the stats file and removed the directory stats and saving the file from user input given in the command line except stdout and stderr. For example - If the command line is given as --stats statistics, it will create the statistics file with the redacted statistics written into it. If the command line is specified as --stats files/abc, it will create the abc file with the necessary information in the files directory. If stdout or stderr is given adter --stats, it will print the statistics to console and not write the statistics to any file
-* **Missing/No Features Found for Dates, Concepts, Phone Number, Gender and Names** --- In this case, as the code was not executable, the functions were not working. Therefore, the changes made above will execute the code accordingly.
+* **Missing/No Features Found for Dates, Concepts, Phone Number, Gender and Names** --- In this case, as the code was not executable, the functions were not working. Therefore, the changes made above will execute the code accordingly. Edited the code for genders by adding new words such as Boy, Girl, Mom, Dad etc., and addresses for more specifc redaction for full address in the form of 1800 Beaumont Drive, Norman, Oklahoma 73071.
 
 Tested the Test cases running from the main directory to verify the successful passing of test cases.
 
 **The command to run the code is as below** ---  
-```pipenv run python redactor.py --input '*.txt' --names --address --dates --genders --phones --concept 'film' --output 'files/' --stats stdout```
+```pipenv run python redactor.py --input '*.txt' --names --address --dates --genders --phones --concept 'movie' --output 'files/' --stats stdout```
 
 In the above command, we can replace 'film' with any other name to find synonyms and redact the sentence accordingly. Further, we can also replace files/ after output tag to any other name as name of directory to store redacted files. At the end, we can replace stdout to any other name which will create file and append the stats accordingly as mentioned in Missing Stats above.
 

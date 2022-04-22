@@ -36,7 +36,7 @@ def test_names():
     data1 = data
     data = nlp(data)
     name_test = redactor.redact_names(data1,'none')
-    assert name_test == '██████'
+    assert name_test == ('██████', 1)
 
 # Test case for readct_address() function in redactor.py
 def test_address():
@@ -44,7 +44,7 @@ def test_address():
     data1 = data
     data = nlp(data)
     address_test = redactor.redact_address(data1,'none')
-    assert address_test == '███'
+    assert address_test == ('███', 1)
 
 # Test case for readact_dates() function in redactor.py
 def test_dates():
@@ -52,25 +52,25 @@ def test_dates():
     data1 = data
     data = nlp(data)
     date_test = redactor.redact_dates(data1,'none')
-    assert date_test == '█████'
+    assert date_test == ('█████', 1)
 
 # Test case for readact_genders() function in redactor.py
 def test_gender():
     data = ' he '
     gender_test = redactor.redact_genders(data,'none')
-    assert len(gender_test) ==len('████')
+    assert len(gender_test) ==len('██')
 
 # Test case for readct_concepts() function in redactor.py
 def test_concept():
     data = 'film'
     concept_test = redactor.redact_concepts(data,'none','film')
-    assert len(concept_test) == len('████')
+    assert len(concept_test) == len('██')
 
 # Test case for readct_phonenumber() function in redactor.py
 def test_phone():
     data = '609-271-3007'
     phone_test = redactor.redact_phonenumber(data,'none')
-    assert len(phone_test) ==len('████████████')
+    assert len(phone_test) ==len('██')
 
 # Test case for writing output code in redactor.py
 def test_output():
